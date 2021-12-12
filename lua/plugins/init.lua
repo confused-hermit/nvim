@@ -18,7 +18,17 @@ return require('packer').startup(function(use)
    use ({'hoob3rt/lualine.nvim', requires = {{'kyazdani42/nvim-web-devicons', opt =true}}, config = "require('configs.lualine-config')" })
    use ({'akinsho/bufferline.nvim', requires = {{'kyazdani42/nvim-web-devicons'}}, config = "require('configs.bufferline-config')"})
    use ({'kyazdani42/nvim-tree.lua', requires = {{'kyazdani42/nvim-web-devicons'}}, config = "require('configs.nvimtree-config')"})
-    if packer_bootstrap then
+   use ({'neovim/nvim-lspconfig', config = "require('configs.lsp')"})
+   use ({'hrsh7th/nvim-cmp'})
+   use ({'hrsh7th/cmp-nvim-lsp'})
+   use ({'hrsh7th/cmp-vsnip'})
+   use ({'hrsh7th/vim-vsnip'})
+   use ({'hrsh7th/cmp-path'})
+   use ({'hrsh7th/cmp-cmdline'})
+   use ({'hrsh7th/cmp-buffer'})
+   use ({'onsails/lspkind-nvim'})
+   use ({'glepnir/dashboard-nvim', config="require('configs.dashboard-config')"})
+   if packer_bootstrap then
         require('packer').sync()
-    end
-end)
+   end
+   end)

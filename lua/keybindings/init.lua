@@ -4,7 +4,9 @@ local map = vim.api.nvim_set_keymap
 
 local opts = {noremap = true, silent = false}
 local opts1 = {noremap = true, silent = true}
-
+-- save file 
+map("n", "<C-s>", ":w<cr>", opts)
+map("i", "<C-s>", "<ESC>:w<cr>", opts)
 -- moving between splits
 map('n', '<C-h>', '<C-w>h', opts )
 map('n', '<C-l>', '<C-w>l', opts)
@@ -22,3 +24,6 @@ map('v', '>', '>gv', opts)
 -- move between buffers
 map('n', '<TAB>', ':bnext<cr>', opts1)
 map('n', '<S-TAB>', ':bprevious<cr>', opts1)
+
+-- lsp settings 
+map("n", "gl", ":lua vim.diagnostic.open_float()<cr>", opts)
