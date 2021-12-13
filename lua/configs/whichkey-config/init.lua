@@ -1,11 +1,8 @@
-local wk = require('which-key')
+local wk = require("which-key")
 local mappings = {
-    q = {":q<cr>", "Quit"},
-    Q = {":wq<cr>", " Save & Quit"},
-    w = {":w<cr>", "Save"},
-    x = {":bdelete<cr>", "Close current buffer"},
-    E = {":e ~/.config/nvim/init.lua<cr>", "Edit Config File"},
-    e = {":NvimTreeToggle<cr>", "Open File Explorer"},
+    ["/"] = {":CommentToggle<cr>", "Toggle Comment"},
+	e = { ":NvimTreeToggle<cr>", "Open File Explorer" },
+	E = { ":e ~/.config/nvim/init.lua<cr>", "Edit Config File" },
 	f = {
 		name = "Telescope",
 		b = { ":Telescope file_browser<cr>", "file browser" },
@@ -23,7 +20,7 @@ local mappings = {
 			d = { ":Telescope lsp_document_diagnostics<cr>", "Diagnostics" },
 		},
 		m = { ":Telescope neoclip<cr>", "neoclip" },
-        n = {":DashboardNewFile<cr>", "New file"},
+		n = { ":DashboardNewFile<cr>", "New file" },
 		o = { ":Telescope oldfiles<cr>", "Recent Files" },
 		r = { ":Telescope registers<cr>", "telescope registers" },
 		s = {
@@ -33,6 +30,11 @@ local mappings = {
 		},
 		t = { ":Telescope colorscheme<cr>", "colorscheme" },
 	},
-} 
-local opts = {prefix = '<leader>'}
+	q = { ":q<cr>", "Quit" },
+	Q = { ":wq<cr>", " Save & Quit" },
+	t = { ":ToggleTerm direction=float<cr>", "Toggle Term" },
+	w = { ":w<cr>", "Save" },
+	x = { ":bdelete<cr>", "Close current buffer" },
+}
+local opts = { prefix = "<leader>" }
 wk.register(mappings, opts)

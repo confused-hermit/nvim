@@ -1,3 +1,4 @@
-require('options')
-require('plugins')
-require('keybindings')
+require("options")
+require("plugins")
+require("keybindings")
+vim.cmd([[colorscheme rose-pine]])
