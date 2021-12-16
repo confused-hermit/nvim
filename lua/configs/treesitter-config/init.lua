@@ -12,4 +12,9 @@ require("nvim-treesitter.configs").setup({
 		extended_mode = false,
 		mad_file_lines = nil,
 	},
+    indent = {
+        enable = true,
+    }
 })
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"

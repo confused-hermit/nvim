@@ -14,7 +14,7 @@ vim.cmd([[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]])
 require("indent_blankline").setup({
 	--    char = "|",
 	buftype_exclude = { "terminal", "dashboard", "packer", "lspinstall", "nvim-lsp-installer" },
-	filetype_exclude = { "dashboard", "packer", "NvimTree" },
+	filetype_exclude = { "dashboard", "packer", "NvimTree","alpha" },
 	space_char_blankline = " ",
 	char_highlight_list = {
 		"IndentBlanklineIndent1",

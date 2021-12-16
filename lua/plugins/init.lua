@@ -66,13 +66,27 @@ return require("packer").startup(function(use)
 	use({ "hrsh7th/cmp-buffer" })
 	use({ "onsails/lspkind-nvim" })
 	use({ "mhartington/formatter.nvim", config = "require('configs.formatting')" })
-	use({ "glepnir/dashboard-nvim", config = "require('configs.dashboard-config')" })
+	use({ "goolord/alpha-nvim", config = "require('configs.alpha')" })
+	use({ "ahmedkhalf/project.nvim", config = "require('configs.project-config')" })
+	use({ "lewis6991/impatient.nvim", config = "require('configs.impatient-config')" })
 	use({ "akinsho/toggleterm.nvim", config = "require('configs.toggleterm-config')" })
 	use({ "lervag/vimtex" })
+	use({ "ellisonleao/glow.nvim" })
 	use({ "norcalli/nvim-colorizer.lua", config = "require('colorizer').setup()" })
 	use({ "lewis6991/gitsigns.nvim", config = "require('gitsigns').setup()" })
 	use({ "lukas-reineke/indent-blankline.nvim", config = "require('configs.blankline-config')" })
 	use({ "terrortylor/nvim-comment", config = "require('configs.comment-config')" })
+	use({
+		"blackCauldron7/surround.nvim",
+		config = function()
+			require("surround").setup({ mappings_style = "surround" })
+		end,
+	})
+	use({ "kyazdani42/nvim-web-devicons" })
+	use({
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+	})
 	if packer_bootstrap then
 		require("packer").sync()
 	end
